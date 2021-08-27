@@ -13,6 +13,7 @@
 
     <main>
     
+       
         <table border="1">
             <thead>
                 <tr>
@@ -24,12 +25,14 @@
             </thead>
 
             <tbody>
+            @foreach($cargo as $c)
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>{{ $c->id }} </td>
+                    <td>{{ $c->cargo }}</td>
+                    <td>{{ $c->descripcion }}</td>
                     <td></td>
                 </tr>
+            @endforeach
             </tbody>
         
         </table>
