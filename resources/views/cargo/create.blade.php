@@ -9,13 +9,14 @@
 
     <header>
         <h1>Nuevo Cargo</h1>
-    <header>
+    </header>
     
     <main>
-        <form action="">
-            <input type="text" placeholder="Ingrese Cargo"><br>
-            <textarea name="" placeholder="Ingrese descripción"></textarea><br>
-            <input type="submit">
+        <form action="{{ route('cargo.store') }}" method="POST">
+            @csrf
+            <input type="text" name="cargo" placeholder="Ingrese Cargo"><br>
+            <textarea name="descripcion" placeholder="Ingrese descripción"></textarea><br>
+            <button>Guardar</button>
         </form>
     
     </main>

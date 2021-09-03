@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ asset('css/estilos.css')}}">
     <title>Document</title>
+
 </head>
 <body>
     
@@ -13,14 +15,16 @@
 
     <main>
     
-       
+     <a href="{{ route('cargo.create') }}">Nuevo</a>  
+
         <table border="1">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>CARGO</th>
                     <th>DESCRIPCIÓN</th>
-                    <th>MANTENIMIENTO</th>
+                    <th>ESTADO</th>
+                    <th colspan=3>MANTENIMIENTO</th>
                 </tr>
             </thead>
 
@@ -30,8 +34,15 @@
                     <td>{{ $c->id }} </td>
                     <td>{{ $c->cargo }}</td>
                     <td>{{ $c->descripcion }}</td>
-                    <td></td>
-                </tr>
+                    <td>{{ $c->estado }}</td>
+                    <td><a href="{{ route('cargo.show', $c->id)}}">Detalles</a></td>
+                    <td><a href="{{ route('cargo.edit', $c ) }}">Editar</a></td>
+                    <td><form action="{{ route('cargo.destroy', $c ) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button>Eliminar</button>
+                    </form></td>
+                </tr>          
             @endforeach
             </tbody>
         

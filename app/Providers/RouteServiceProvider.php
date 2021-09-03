@@ -56,7 +56,8 @@ $this->limitarPeticiones();
     }
 
     protected function mapCargosRoute(){
-        Route::namespace($this->nameSpaceCargos)
+        Route::middleware('web')
+        ->namespace($this->nameSpaceCargos)
         ->group(base_path('routes/view/cargos.php'));
     }
 

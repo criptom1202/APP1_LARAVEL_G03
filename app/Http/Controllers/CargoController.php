@@ -25,6 +25,10 @@ class CargoController extends Controller
      */
     public function create()
     {
+
+
+
+
         return view('cargo.create');
     }
 
@@ -36,7 +40,23 @@ class CargoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        // $cargo = Cargo::create([
+        //     'cargo' => $request->cargo,
+        //     'descripcion' => $request->descripcion,
+        //     'estado' => $request->estado
+        // ]);
+
+        $cargo = Cargo::create($request->all());
+
+
+        return redirect()->route('cargo.index');
+
+
+
+
+
+
     }
 
     /**
@@ -47,7 +67,8 @@ class CargoController extends Controller
      */
     public function show($id)
     {
-        //
+        $cargo = Cargo::find($id);
+        return $cargo;
     }
 
     /**
@@ -56,9 +77,9 @@ class CargoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Cargo $cargo)
     {
-        return "Formulario de edición de cargos del ID: " . $id;
+        return view('cargo.edit', compact('cargo'));
     }
 
     /**
@@ -68,9 +89,31 @@ class CargoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Cargo $cargo)
     {
-        //
+        
+        //return $request;
+        $cargo->update($request->all());
+
+        // $cargo = Cargo::find($id);
+
+        // $cargo->cargo = $request->cargo;
+        // $cargo->descripcion = $request->descripcion;
+        // $cargo->save();
+
+
+
+        // Cargo::where('id', $id)
+        // ->update([
+        //     'cargo' => $request->cargo,
+        //     'descripcion' => $request->descripcion
+        // ]);
+
+
+
+
+         return redirect()->route('cargo.index');
+       //return $request;
     }
 
     /**
@@ -79,8 +122,11 @@ class CargoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Cargo $cargo)
     {
-        //
+        // $cargo = Cargo::find($id);
+        // $cargo->delete();
+        $cargo->delete();
+        return redirect()->route('cargo.index');
     }
 }
