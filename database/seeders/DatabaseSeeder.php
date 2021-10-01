@@ -13,10 +13,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        // \App\Models\Cargo::factory(20)->create();
 
         $this->call([
-            CargoSeeder::class,
+            CargoSeeder::class
         ]);
     }
 }
