@@ -41,6 +41,14 @@ class CargoController extends Controller
     public function store(Request $request)
     {
 
+
+
+        $cargo = new Cargo();
+        $cargo->cargo= "Admin";
+        $cargo->descripcion = "Desc de admin";
+        $cargo->estado = "Activo";
+        $cargo->save();
+
         // $cargo = Cargo::create([
         //     'cargo' => $request->cargo,
         //     'descripcion' => $request->descripcion,
