@@ -14,7 +14,7 @@ class CargoController extends Controller
     public function index()
     {
 
-        $cargo = Cargo::all();
+        $cargo = Cargo::paginate(10);
                 return view('cargo.index', compact('cargo'));
     }
 

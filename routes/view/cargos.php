@@ -6,13 +6,9 @@ use App\Http\Controllers\TestController;
 
 use Illuminate\Support\Facades\Route;
 
-Route::prefix('intranet')->group(function(){
+Route::prefix('intranet')->middleware('valform')->group(function(){
      Route::get('mostrar-cargos', [CargoController::class, 'mostrarDatos']);
      Route::get('test', TestController::class);
-
-
-
-
     // Route::get('cargos', [CargoController::class, 'index'])->name('cargo.index');
     // Route::get('cargos/create/', [CargoController::class, 'create'])->name('cargo.create');
     // Route::get('cargos/edit/{cargo}', [CargoController::class, 'edit'])->name('cargo.edit');

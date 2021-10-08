@@ -37,6 +37,15 @@ Route::get('inicio', function(){
 Route::view('laravel', 'welcome');
 
 
+Route::get('test1/{val}', function($val){
+    return "Solicitud exitosa";
+})->middleware('xyz');
+
+
+
+Route::get('test2', function(){
+    return "Falló";
+})->name('t2');
 
 
 
