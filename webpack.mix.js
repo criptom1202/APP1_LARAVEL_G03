@@ -11,15 +11,15 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.postCss('resources/css/app.css', 'public/css', [
-   require('tailwindcss'),
- ])
- .postCss('resources/css/components.css', 'public/css/app.css', [
+// mix.postCss('resources/css/app.css', 'public/css', [
+//    require('tailwindcss'),
+//  ])
+ mix.postCss('resources/css/components.css', 'public/css', [
    require('tailwindcss'),
  ]);
 
-mix.js('resources/js/app1.js', 'public/js/app.js')
-   .js('resources/js/app2.js', 'public/js/app.js');
+// mix.js('resources/js/app1.js', 'public/js/app.js')
+//    .js('resources/js/app2.js', 'public/js/app.js');
 
 // mix.sass('resources/sass/app1.scss', 'public/css/app.css')
 // .sass('resources/sass/app2.scss', 'public/css/app.css')

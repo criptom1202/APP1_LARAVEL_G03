@@ -3,7 +3,7 @@
         <main class="container w-10/12 mx-auto">
         
         <div class="flex flex-row justify-between py-10">
-            <h1 class="text-4xl font-bold">Lista de Cargos</h1>
+            <h1 class="text-4xl font-bold">Lista de Empleados</h1>
             <a href="{{ route('cargo.create') }}" class="button-azul">Nuevo</a>  
         </div>
         <div>      
@@ -13,9 +13,13 @@
                 <thead>
                     <tr>
                         <th class="th-tabla rounded-tl-lg">ID</th>
-                        <th class="th-tabla">CARGO</th>
-                        <th class="th-tabla">DESCRIPCIÓN</th>
-                        <th class="th-tabla">ESTADO</th>
+                        <th class="th-tabla">NOMBRE</th>
+                        <th class="th-tabla">APELLIDO</th>
+                        <th class="th-tabla">DNI</th>
+                        <th class="th-tabla">SEXO</th>
+                        <th class="th-tabla">FECHA CONTRATO</th>
+                        <th>SALARIO</th>
+                        <th>CARGO</th>
                         <th class="th-tabla" colspan=2>MANTENIMIENTO</th>
                         <th class="th-tabla  rounded-tr-lg"><a href="" class="px-4 py-2 rounded hover:bg-red-700"><i class="far fa-trash-alt"></i></a></th>
                     </tr>

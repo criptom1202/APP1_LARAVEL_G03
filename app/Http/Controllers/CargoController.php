@@ -27,9 +27,9 @@ class CargoController extends Controller
     {
 
 
+        $cargo = new Cargo();
 
-
-        return view('cargo.create');
+        return view('cargo.create', compact('cargo'));
     }
 
     /**
@@ -43,11 +43,11 @@ class CargoController extends Controller
 
 
 
-        $cargo = new Cargo();
-        $cargo->cargo= "Admin";
-        $cargo->descripcion = "Desc de admin";
-        $cargo->estado = "Activo";
-        $cargo->save();
+        // $cargo = new Cargo();
+        // $cargo->cargo= "Admin";
+        // $cargo->descripcion = "Desc de admin";
+        // $cargo->estado = "Activo";
+        // $cargo->save();
 
         // $cargo = Cargo::create([
         //     'cargo' => $request->cargo,

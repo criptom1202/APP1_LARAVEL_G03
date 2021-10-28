@@ -18,14 +18,12 @@ class CargoSeeder extends Seeder
         $cargo = new Cargo();
         $cargo->cargo = "Administrador";
         $cargo->descripcion = "Descripción de administrador";
-        $cargo->estado = "Activo";
         $cargo->save();
 
 
          $cargo = Cargo::create([
             'cargo' => "Supervisor",
             'descripcion' => "Descripción de supervisor",
-            'estado' => "Inactivo"
         ]);
 
 

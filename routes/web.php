@@ -48,6 +48,7 @@ Route::get('test2', function(){
 })->name('t2');
 
 
+Route::view('testeo', 'test');
 
 
 
