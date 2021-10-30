@@ -14,9 +14,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\Cargo::factory(20)->create();
-
-        $this->call([
-            CargoSeeder::class
-        ]);
+        \App\Models\Empleado::factory(30)->create();
+        // $this->call([
+        //     CargoSeeder::class
+        // ]);
     }
 }

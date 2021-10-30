@@ -41,7 +41,10 @@ class CargoController extends Controller
     public function store(Request $request)
     {
 
-
+    $request->validate([
+        'cargo' => 'required|max:50|unique:cargos,cargo',
+        'descripcion' => 'required|max:255'
+    ]);
 
         // $cargo = new Cargo();
         // $cargo->cargo= "Admin";

@@ -1,7 +1,7 @@
 @props(['caTituloFormulario', 'caNombreRuta', 'caRegistro' => null,  'caAccion']);
 
 <x-formulario :cTituloFormulario="$caTituloFormulario" :cNombreRuta="$caNombreRuta" :cRegistro="$caRegistro">
-    
+
     <x-slot name="sInputs">
         {{ $slot ?? null }}
         <label for="">Cargo:<br>

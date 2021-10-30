@@ -14,6 +14,18 @@
             <div class="bg-blue-900 pt-20 w-3/12"><x-menu class="text-white text-sm"/></div>
             <div class="w-10/12">
                 <div class="contenedor font-bold border-b-2 border-fuchsia-600 py-5">User</div>
+
+                @if ($errors->any())
+                    <div class="w-full text-center bg-red-200">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+
                 {{ $sPrincipal ?? null}}
 
                 <div class="py-5">

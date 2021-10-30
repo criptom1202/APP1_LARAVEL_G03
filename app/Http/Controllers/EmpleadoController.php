@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Empleado;
+use App\Models\Cargo;
+use Illuminate\Support\Facades\DB;
+
 
 class EmpleadoController extends Controller
 {
@@ -13,8 +17,23 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
+     
+        // $fecha = date_create('2021-12-12');
         
-        return view('empleado.index');
+        // //$fecha_for = str_replace('-', '/', $fecha);
+        // return date_format($fecha, "d/m/Y");
+        
+        //return  $fecha_for;
+        //$empleados = Empleado::paginate(15);
+        $empleados = DB::select('call sp_ver_empleados(?, ?)', [1, 15]);
+        
+        //return $empleados = DB::select('select nombre, apellidos from empleados')->paginate(15);
+
+        // return $empleados = DB::table('empleados')
+        // ->join('cargos', 'cargos.id', '=', 'empleados.cargo_id')
+        // ->select('nombre as mi_nombres', 'apellidos', 'dni', 'sexo', 'fecha_cont', 'salario', 'cargo')
+        // ->paginate(15);
+        return view('empleado.index', compact('empleados'));
     }
 
     /**
@@ -24,7 +43,13 @@ class EmpleadoController extends Controller
      */
     public function create()
     {
-        //
+        $empleados = new Empleado();
+        $cargos = Cargo::all();
+        $datos = [
+            'empleados' => $empleados,
+            'cargos' => $cargos
+        ];
+        return view('empleado.create', compact('datos'));
     }
 
     /**
@@ -35,7 +60,8 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Empleado::create($request->all());
+        return redirect()->route('empleados.index');
     }
 
     /**

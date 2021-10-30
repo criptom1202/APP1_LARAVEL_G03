@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\EmpleadoController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,10 +28,6 @@ Route::get('intranet/clientes', function(){
     return "<h1>KBSOLUCIONES</h1>";
 });
 
-Route::get('empleados/{nombre?}', function($nombre = null){
-    return "Mi nombre es: " .  $nombre;
-});
-
 Route::get('inicio', function(){
     return view('inicio');
 });
@@ -49,6 +47,8 @@ Route::get('test2', function(){
 
 
 Route::view('testeo', 'test');
+
+Route::resource('empleados', EmpleadoController::class)->names('empleados');
 
 
 
