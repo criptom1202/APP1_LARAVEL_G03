@@ -17,7 +17,7 @@
                         <th class="th-tabla">DESCRIPCIÓN</th>
                         <th class="th-tabla">ESTADO</th>
                         <th class="th-tabla" colspan=2>MANTENIMIENTO</th>
-                        <th class="th-tabla  rounded-tr-lg"><a href="" class="px-4 py-2 rounded hover:bg-red-700"><i class="far fa-trash-alt"></i></a></th>
+                        <th class="th-tabla  rounded-tr-lg"><button  id="btn_eliminar2" class="px-4 py-2 rounded hover:bg-red-700"><i class="far fa-trash-alt"  ></i></button></th>
                     </tr>
                 </thead>
 

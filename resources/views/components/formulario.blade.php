@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot name="sPrincipal">
-        <div class="contenedor h-screen">
+        <div class="contenedor">
             <h1 class="titulo-form">{{ $cTituloFormulario }}</h1>
             <form action="{{ route( $cNombreRuta, $cRegistro ?? null ) }}" method="POST">
                 @csrf

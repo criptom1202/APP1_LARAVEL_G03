@@ -20,7 +20,7 @@ Route::prefix('intranet')->middleware('valform')->group(function(){
 
 
     Route::resource('cargos', CargoController::class)->names('cargo');
-
-
+    Route::get('index-json', [CargoController::class, 'index_json']);
+    Route::post('prueba-post', [CargoController::class, 'prueba_post']);
 
 });

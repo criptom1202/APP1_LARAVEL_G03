@@ -9,6 +9,7 @@
         <div>      
         
         </div>
+        
         <table border="1" class="w-full">
                 <thead>
                     <tr>
@@ -21,7 +22,7 @@
                         <th class="th-tabla">SALARIO</th>
                         <th class="th-tabla">CARGO</th>
                         <th class="th-tabla" colspan=2>MANTENIMIENTO</th>
-                        <th class="th-tabla  rounded-tr-lg"><a href="" class="px-4 py-2 rounded hover:bg-red-700"><i class="far fa-trash-alt"></i></a></th>
+                        <th class="th-tabla  rounded-tr-lg"><a class="px-4 py-2 rounded hover:bg-red-700"><i class="far fa-trash-alt"></i></a></th>
                     </tr>
                 </thead>
 

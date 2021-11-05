@@ -60,6 +60,10 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'dni' => 'required|max:50|unique:empleados,dni',
+        ]);
+
         Empleado::create($request->all());
         return redirect()->route('empleados.index');
     }
